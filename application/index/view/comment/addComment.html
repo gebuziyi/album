@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+     ================================================== -->
+    <meta charset="utf-8" />
+    <title>XXX个人电子相册</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Mobile Specific Metas
+      ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- CSS
+      ================================================== -->
+    <link rel="stylesheet" href="__ROOT__/static/user/css/style.css" />
+    <link rel="stylesheet" href="__ROOT__/static/user/css/skeleton.css" />
+    <link rel="stylesheet" href="__ROOT__/static/user/css/layout.css" />
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+    <!-- Tooltip
+      ================================================== -->
+    <link href="__ROOT__/static/user/css/tipTip.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__ROOT__/static/user/js/jquery.tipTip.minified.js"></script>
+
+
+    <script type="text/javascript" src="__ROOT__/static/user/js/css3-mediaqueries.js"></script>
+
+    <!-- FlexSlider
+    ================================================== -->
+    <link rel="stylesheet" href="__ROOT__/static/user/css/flexslider.css" type="text/css" media="screen" />
+    <script src="__ROOT__/static/user/js/jquery.flexslider-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/static/bootstrap/css/bootstrap.css">
+    <script src="__ROOT__/static/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/static/bootstrap/css/bootstrap.css">
+    <script src="__ROOT__/static/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="__ROOT__/static/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="__ROOT__/static/kindeditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="__ROOT__/static/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="__ROOT__/static/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8"
+            src="__ROOT__/static/kindeditor/plugins/code/prettify.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                prevText: "",
+                nextText: ""
+            });
+        });
+    </script>
+    <script>
+        KindEditor.ready(function(K) {
+            var editor1 = K.create('textarea[name="content"]', {
+                cssPath : '__ROOT__/static/kindeditor/plugins/code/prettify.css',
+                uploadJson : '__ROOT__/static/kindeditor/php/upload_json.php',
+                fileManagerJson : '__ROOT__/static/kindeditor/php/file_manager_json.php',
+                allowFileManager : true,
+                afterCreate : function() {
+                    var self = this;
+                    K.ctrl(document, 13, function() {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function() {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                }
+            });
+            prettyPrint();
+        });
+    </script>
+
+    <!-- Script
+    ================================================== -->
+    <script type="text/javascript" src="__ROOT__/static/user/js/scripts.js"></script>
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="__ROOT__/static/user/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="__ROOT__/static/user/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="__ROOT__/static/user/images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="__ROOT__/static/user/images/apple-touch-icon-114x114.png" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+
+<div class="container">
+
+    <div class="sixteen columns clearfix">
+        <div class="header-bg clearfix">
+            <div class="three columns offset-by-one">
+                <div class="logo"><a href="index.html"><img src="__ROOT__/static/user/images/logo.png" alt="Rubigo" /></a></div>
+            </div>
+            <div class="four offset-by-seven socialRight">
+                <div class="socialIconSprites">
+                    <a href="#" class="facebook tooltip" title="Facebook"></a>
+                    <a href="#" class="twitter tooltip" title="Twitter"></a>
+                    <a href="#" class="youtube tooltip" title="YouTube"></a>
+                    <a href="#" class="linkedin tooltip" title="LinkedIn"></a>
+                    <a href="#" class="rss tooltip" title="RSS"></a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div><!-- header-bg -->
+    </div>
+    <div class="clear"></div>
+    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+
+    <div class="two columns offset-by-one">
+        <div class="ribbonBg">
+            <ul>
+                <li><a href="{:url('user/index')}" class="home active" title="Home"></a></li>
+                <li><a href="{:url('about/index')}" class="about" title="About us"></a></li>
+                <li><a href="{:url('photo/index')}" class="portfolio" title="Portfolio"></a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+<div class="col-md-2">
+    </div>
+<div class="col-md-4">
+    <div style="margin: 10px 10px" class="form-group">
+        <div class="panel-heading">全部评论</div>
+        {volist name = "data" id="v"}
+        <div class="panel-body">
+            <span style="color: #440044">{$v['author']}</span>
+            <span style="color: red">{:date('Y-m-d H:i:s',$v['time'])}</span><br>
+            <p style="color: blue">{$v['content']}</p>
+            {if $v['reply'] eq null}
+            <p style="color: green">up主暂未回复该评论</p>
+            {else}
+            <p style="color: green">up主回复{$v['author']}:{$v['reply']}</p>
+            {/if}
+        </div>
+        <!--<div class="panel-footer">
+            <a href="" class="btn btn-primary btn-xs">回复</a>
+        </div>-->
+        {/volist}
+        <div style="text-align: center">{$data->render()}</div>
+    </div>
+</div>
+<div class="col-md-5">
+    <div style="margin: 10px 10px" class="form-group">
+        <form action="{:url('comment/saveComment')}" method="post">
+
+            <input type="hidden" name="author" class="form-control" value="{$user['username']}">
+           
+            <input type="hidden" name="photo_id" value="{$photo_id}">
+            
+            <textarea name="content" id="content" class="form-control" rows="11" style="height: 360px" ></textarea>
+            <br>
+            <input type="submit" name="submit" value="发表评论" class="btn btn-primary btn-sm">
+            </form>
+    </div>
+</div>
+</div>
+<div class="footerWrap">
+    (&copy;)Copyright  2017  | 电子相册管理系统  |  Collect from 个人电子相册
+</div>
+</body>
+</html>

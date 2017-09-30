@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="__ROOT__/static/bootstrap/css/bootstrap.css">
+    <script src="__ROOT__/static/bootstrap/js/bootstrap.js"></script>
+    <title>相册分类管理</title>
+</head>
+<body>
+<div class="shell">
+    <img src="__ROOT__/static/images/album.jpg" width="100px" height="50px" style="margin: 0 auto 0 150px;">
+</div>
+<div class ="panel panel-default" style="margin: auto 200px;">
+    <nav class="navbar navbar-inverse">
+        <ul class="nav nav-tabs navbar-left">
+            <li><a  href="{:url('backend/index')}">
+                <span class="glyphicon glyphicon-home">主界面</span></a></li>
+            <li><a  href="{:url('sort/index')}">
+                <span class="glyphicon glyphicon-picture">相册分类管理</span></a></li>
+            <li><a  href="{:url('admin/index')}">
+                <span class="glyphicon glyphicon-user">用户管理</span></a></li>
+        </ul>
+        <ul class="nav nav-tabs navbar-right" style="margin-right: 0px;">
+            <li><a href="{:url('user/logout')}">
+                <span class="glyphicon glyphicon-log-out"></span>退出系统</a></li>
+        </ul>
+    </nav>
+
+<div class="panel panel-success">
+    <div class="panel-heading">相册分类详细信息</div>
+    <div class="panel-body">
+        <p>
+            这是<span style="font-weight:bold;color: #660066;">相册分类信息页面</span>，通过表格将分类的名称显示出来。您还可以通过“添加”，“删除”，“修改”
+            等按钮进行相关操作。
+        </p>
+        <a href="{:url('sort/create')}" class="btn btn-info btn-sm">添加</a>
+    </div>
+
+    <table class="table table-bordered">
+        <tr class="row">
+            <th style="text-align: center">分  类</th>
+            <th style="text-align: center">编  辑</th>
+        </tr>
+        {volist name="data" id="v"}
+        <tr class="row">
+            <td style="text-align: center">{$v->name}</td>
+            <td style="text-align: center">
+                <a href="__ROOT__/index.php/index/sort/edit/id/{$v['id']}" class="btn btn-success btn-sm">修改</a>
+                <a href="__ROOT__/index.php/index/sort/delete/id/{$v['id']}" class="btn btn-warning btn-sm">删除</a>
+            </td>
+        </tr>
+        {/volist}
+    </table>
+
+    <div style="text-align: center;">{$data->render()}</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<style>
+    .radio{position: relative}
+    #forget{position: absolute;top: 250px;left: 270px;}
+    h3{width:100%;padding-bottom:10px;border-bottom:2px solid #CCC;}
+    #close{position:absolute;top:2px;right:2px;}
+    #close span{padding:3px 10px;background-color: #999;font-size:20px;color:white;cursor:pointer;}
+    #log{display: block; width: 400px; height: 580px; padding: 30px 40px; background-color: #F3F5F6; position: fixed; top: 45px;; right: 100px;}
+    .error{float:right;color:red;font-size:1.2em;margin-right:10px}
+</style>
+<link rel="stylesheet" href="__ROOT__/static/bootstrap/css/bootstrap.min.css">
+<script src="__ROOT__/static/bootstrap/jquery/jquery.min.js"></script>
+<script src="__ROOT__/static/bootstrap/js/bootstrap.min.js"></script>
+<body style="background: url(../../../../public/image/3.jpg) no-repeat ;background-size: cover">
+<!--<img src="__ROOT__/image/3.jpg" width="100%">-->
+<div id="log">
+    <form  action="{:url('user/save')}" method="post">
+        <h3 >请登录</h3>
+        <div class="form-group">
+            <label for="username">用户名*</label>
+            <span id="user"  class="error"> </span>
+            <input type="text" class="form-control"  name="username"
+                   id="username" placeholder="用户名" onblur='checkName()' required />
+        </div>
+        <div class="form-group">
+            <label for="password">密码*</label>
+            <label>
+                <a href="{:url('user/forget')}" id="forget">>>忘记密码？</a>
+            </label>
+            <span id="psword" class="error"> </span>
+
+            <input type="password" class="form-control"
+                   name="password"
+                   id="password" placeholder="密码" onblur='checkPassword()' required />
+            <br>
+            <div class="input-group">
+                <label class="control-table">验证码</label><br>
+                <input type="text" name="code" class="form-control" style="width:50%;">
+            </div><br>
+            <div>
+                <a href="{:url('user/login')}" onclick="captcha_img();">{:captcha_img()}</a><a href="{:url('user/login')}" onclick="captcha_img();">看不清？换一张</a>
+                </div>
+
+            <!--<div class="form-group">
+                <label for="code">验证码</label>
+
+                <span id="code1"class="error"></span>
+
+                <input type="text" name="verify" class="form-control" style="width:50%;" placeholder="验证码" required />
+            </div>
+            <div class="input-group" style="width:50px;">
+                <img src="{:captcha_src()}"alt="captcha"id="captcha_img"onclick="refreshVerifr()"><a href="javascript:refreshVerifr()">看不清？换一张</a>
+                &lt;!&ndash;<a href="" onclick="captcha_img();">{:captcha_img()}</a><a href="" onclick="captcha_img();">看不清？换一张</a>&ndash;&gt;
+            </div>
+
+        </div>-->
+        <div class="radio">
+            <label>
+                <input type="radio"name="identify" value="use"  style="width:15px;height:15px;"/>用户登陆
+            </label>
+            <label>
+                <input type="radio"name="identify"  value="admin" style="width:15px;height:15px;"/>管理员登陆
+            </label>
+            </div>
+        <div class="form-group">
+        <input type="submit" name="submit" class="btn btn-primary login-button" value="登录" style="width:70px;height:40px;" >
+        <p class="text-success"style="margin-top: 10px;"><a href="{:url('user/register')}">>>还没账号？去注册</a></p>
+</div>
+            </div>
+    </form>
+</div>
+<script>
+
+    var checkName=function() {
+        document.getElementById("user").innerHTML ="";
+        var name = eval(document.getElementById('username')).value;
+        if (name.length > 20 || name.length < 1)
+            document.getElementById("user").innerHTML = "用户名长度在1-20之间！" ;
+    }
+    var checkPassword = function(){
+        document.getElementById("psword").innerHTML ="";
+        var name = eval(document.getElementById('password')).value;
+        if (name.length > 12 || name.length < 6)
+            document.getElementById("psword").innerHTML="密码长度在6-12之间！" ;
+    }
+
+</script>
+<script type="text/javascript">
+    function refreshVerifr(){
+        var ts=Date.parse(new Date())/1000;
+        console.log(ts);
+        $('#captcha_img').attr('src','/captcha?id='+ts);
+    }
+</script>
+</body>
+</html>

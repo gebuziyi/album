@@ -1,0 +1,181 @@
+
+   <!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+ 	================================================== -->
+	<meta charset="utf-8" />
+	<title>XXX个人电子相册</title>
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<!-- Mobile Specific Metas
+  	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+	  ================================================== -->
+	<link rel="stylesheet" href="__ROOT__/static/user/css/style.css" />
+	<link rel="stylesheet" href="__ROOT__/static/user/css/skeleton.css" />
+	<link rel="stylesheet" href="__ROOT__/static/user/css/layout.css" />
+	
+	<!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	
+	<!-- Tooltip 
+	  ================================================== -->
+	<link href="__ROOT__/static/user/css/tipTip.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="__ROOT__/static/user/js/jquery.tipTip.minified.js"></script>
+	
+	
+	<script type="text/javascript" src="__ROOT__/static/user/js/css3-mediaqueries.js"></script>
+
+    <!-- FlexSlider
+    ================================================== -->
+    <link rel="stylesheet" href="__ROOT__/static/user/css/flexslider.css" type="text/css" media="screen" />
+    <script src="__ROOT__/static/user/js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				prevText: "",
+			    nextText: ""     
+			});
+		});
+	</script>
+      <script>
+		;!function(){
+		laydate({
+		   elem: '#demo'
+		})
+		}();
+		
+	
+      </script>
+       <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <script src="__ROOT__/static/user/laydate/laydate.js"></script>
+         <script type="text/javascript" src="__ROOT__/static/user/audiojs/audio.min.js"></script>
+         <script>
+           audiojs.events.ready(function() {
+	       var as = audiojs.createAll();
+           });
+         </script>
+	
+    
+    
+    <!-- Script
+    ================================================== -->
+    <script type="text/javascript" src="__ROOT__/static/user/js/scripts.js"></script>
+    
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="__ROOT__/static/user/images/favicon.ico" />
+	<link rel="apple-touch-icon" href="__ROOT__/static/user/images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="__ROOT__/static/user/images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="__ROOT__/static/user/images/apple-touch-icon-114x114.png" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+
+	<div class="container">
+    
+    	<div class="sixteen columns clearfix">
+		    <div class="header-bg clearfix">
+		        <div class="three columns offset-by-one">
+		            <div class="logo"><a href="index.html"><img src="__ROOT__/static/user/images/logo.png" alt="Rubigo" /></a></div>
+		        </div>
+		        <div class="four offset-by-seven socialRight">
+		            <div class="socialIconSprites">		                
+		                <a href="__ROOT__/index.php/index/user/login" class="linkedin tooltip" title="login"></a>
+		                <a href="__ROOT__/index/index/index" class="rss tooltip" title="logout"></a>
+		                <div class="clear"></div>
+		            </div>
+		        </div>
+		    </div><!-- header-bg -->
+		</div>
+		<div class="clear"></div>
+        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+        
+        <div class="two columns offset-by-one">
+		    <div class="ribbonBg">
+		        <ul>
+		            <li><a href="{:url('user/index')}" class="home active" title="Home"></a></li>
+		            <li><a href="{:url('about/index')}" class="about" title="About us"></a></li>
+		            <li><a href="{:url('job/index')}" class="portfolio" title="Portfolio"></a></li>
+		            
+		        </ul>
+		    </div>
+		</div>     
+        <div class="sixteen columns">
+        	<div class="contant-area" style="">
+            	<div class="thirteen columns offset-left" >
+                          
+                </div>
+                <div class="clear">
+                </div>
+                 <div class="" style="background-color:#ccc;margin-left:122px; width:818px;"><h4 style="margin-left:15px;"><b>头像修改</b></h4></div>
+                 
+                 <div class="" style="margin-left:125px; width:815px; height:800px; background-color:white;">
+                    
+                  <ul class="nav nav-tabs">
+                  <li role="presentation" class="active"><a href="#detail"  data-toggle="tab" style="font-weight:bold;">图片选择</a></li>
+                  <li role="presentation"><a style="font-weight:bold;" href="#edit"  data-toggle="tab">本地上传</a></li>
+                  </ul>
+                    <div id="myTabContent" class="tab-content">
+                      <div class="tab-pane fade in active" id="detail">
+                         <form action="" name="form" method="post" >
+
+            		      <label style="padding-top:10px;padding-left:20px; border-bottom:2px solid #ccc;" >最新照片({$data['num']['apcount']})</label>           							
+       					
+       					
+       					 <div class="" style=" margin-top:5px;margin-left:15px; width:630px;  height:500px; " >
+	                      
+	                      {for start="0" end="$data['num']['apcount']" name="i"}
+	                       <div class="" style=" width:125px;height:125px; float:left;" >
+	                       
+	                       <a href="__ROOT__/index.php/index/About/flush/id/{$data['num']['id']}/u/{$photos[$i]['url']}"> <img style=" border:1px solid #ccc; margin:5px; padding:3px; width:100px;height:100px;" src="__ROOT__/newpath/{$photos[$i]['url']}"></a>      
+	                       </div>
+	                      {/for}
+	                     </div>
+       					
+       					</form>
+                       </div>
+                       <div class="tab-pane fade" id="edit">
+                         <form action="{:url('About/up',['id'=>$data['num']['id']])}" method="post" enctype="multipart/form-data">
+                           <div style="margin:10px 0 30px 10px;  ">
+                           <label> 上传到相册：</label>
+                           <select name="job_id"  style=" margin-left:10px; width:30%;">                    
+                                {foreach name="job" item="v"}
+                                 <option value="{$v['id']}" >{$v['title']}</option>
+                                {/foreach}  
+                                <option value="new" selected> 上传到新建相册 </option>                  
+        				   </select>
+        				   </div>
+        				   
+                           <input type="file" style="margin:0 0 10px 20px;" name="file">
+                           <input type="submit" style="margin:0 0 0 20px;" name="submit" value="上传图片">
+                         </form>
+                       </div>
+                    </div>
+                    
+                 </div>
+             </div>
+        </div>
+                 
+                 	
+<div class="footerWrap">
+		(&copy;)Copyright  2017  | 电子相册管理系统  |  Collect from 个人电子相册
+	</div>
+     
+
+</body>
+</html>
+	

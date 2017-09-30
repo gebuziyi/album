@@ -1,0 +1,52 @@
+{layout name="layout" /}
+        
+        <div class="sixteen columns">
+        	<div class="contant-area">
+            	<div class="thirteen columns offset-left">
+             		<h1>相册</h1> 
+             		
+             	<div class="" style="margin: 20px 0 0 20px;">
+					<a href="{:url('job/create')}" style="text-decoration:none; margin:5px 10px 10px 0;"> <input type="button" class="btn  btn-info" value="创建相册"></a>
+        			<a href="{:url('photo/show')}" style="text-decoration:none; margin:5px 10px 10px 0;"> <input type="button" class="btn  btn-info" value="上传相片"></a>
+					<a href="{:url('job/index')}" style="float:right; margin:0px 10px 0 0;"><input type="button" class="btn btn-info" value="返回"></a>
+				</div>             		             		
+                    <div class="" style="">
+                    	<form action="{:url('job/save',['id'=>$id])}"  method="post">
+                    		<div style="float:left; margin:10px 10px 10px 0;">
+                    		相册名称：<input type="text" name="title" class="form-control" >
+                    		</div>
+                    		<br>
+                    		<div style="margin:100px 10px 10px 0;">
+                    		相册描述：<textarea name="article" rows="10" cols="100" class="form-control"></textarea>
+                    		</div>
+                    		<br>
+                    		相册分类：<select style="margin:10px 10px 10px 0;" name="sort_name" class="form-control">                  	
+                    		{volist name="sort" id="v"}
+							<option value="{$v['name']}">{$v['name']}</option>
+							{/volist}
+                    		</select>
+                    		
+                    		<div>
+                    		<input type="submit" name="submit" value="确定" class="btn btn-info btn-sm" style="text-align:center;">
+                    		<input type="submit" name="submit" value="取消" class="btn btn-info btn-sm" style="text-align:center;margin:0 0 0 10px;">
+                    		</div>
+                    	</form>
+                    
+                    
+                    </div> 
+                   
+                      
+                      
+                </div>
+                
+                
+                
+                <div class="clear"></div>
+                <div class="blank"></div>
+             </div><!--contant-area-->
+        </div>
+    </div><!-- container -->
+    
+    
+    
+    

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>用户注册</title>
+</head>
+<style>
+   /* body{height: 10000px}*/
+    h3{width:100%;padding-bottom:10px;border-bottom:2px solid #ccc;}
+   /* #close{position:absolute;top:2px;right:2px;}*/
+     #close span{padding:3px 10px;background-color: #999;font-size:20px;color:white;cursor:pointer;}
+    #log{display: block; width: 500px; padding: 30px 40px; background-color: #F3F5F6; position: absolute; top: 50px;;
+        left:50%;transform: translate(-50%); }
+    .error{float:right;color:red;font-size:1.2em;margin-right:10px}
+</style>
+<link rel="stylesheet" href="__ROOT__/bootstrap/css/bootstrap.min.css">
+<script src="__ROOT__/bootstrap/jquery/jquery.min.js"></script>
+<script src="__ROOT__/bootstrap/js/bootstrap.min.js"></script>
+<img src="__ROOT__/image/4.jpg"width="100%">
+
+<body>
+<div id="log">
+    <form action="{:url('User/register_post')}" method="post">
+       <!--<div id="log">-->
+        <h3>用户注册</h3>
+        <div class="form-group">
+            <label for="username">用户名*</label>
+		  <span id="user"class="error"></span>
+		  <input type="text"class="form-control"name="username"id="username"placeholder="用户名"onblur='checkName()'required />
+        </div>
+
+        <div class="form-group">
+            <label for="password">密码*</label>
+		  <span id="pwd"class="error"></span>
+		  <input type="password"class="form-control"name="password"id="password"placeholder="密码"onblur='checkPassword()'required />
+        </div>
+
+        <div class="form-group">
+            <label for="cfm">确认密码*</label>
+		  <span id="cfm1"class="error"></span>
+		  <input type="password"class="form-control"name="cfm"id="cfm"placeholder="确认密码"onblur='checkCfm()'required />
+        </div>
+
+        <div class="form-group">
+            <label for="email">邮箱*</label>
+		  <span id="email1"class="error"></span>
+		  <input type="text"class="form-control"name="email"id="email"placeholder="邮箱地址"onblur='checkEmail()'required />
+        </div>
+
+        <div class="form-inline">
+            <label for="sex">性别*</label>
+           <!-- <span id="sex1"class="error"></span>-->
+		  <input style="margin: 10px"type="radio"class="form-control"name="sex"id="male"value="男" required />男<input style="margin: 10px" type="radio"class="form-control"name="sex"id="female"value="女" required />女
+        </div>
+
+        <div class="form-group">
+            <label for="birthday">出生年月*</label>
+		  <span id="birthday1"class="error"></span>
+		  <input type="text"class="form-control"name="birthday"id="birthday"placeholder="出生年月"onblur='checkBirthday()'required />
+        </div>
+
+        <div class="form-group">
+            <label for="job">职业*</label>
+		  <span id="job1"class="error"></span>
+		  <input type="text"class="form-control"name="job"id="job"placeholder="职业"/>
+        </div>
+
+        <div class="form-group">
+            <label for="hobby">爱好*</label>
+		  <span id="hobby1"class="error"></span>
+		  <input type="text"class="form-control"name="hobby"id="hobby"placeholder="爱好"/>
+        </div>
+
+        <input type="submit"name="submit"class="btn btn-primary login-button"value="点击注册">
+          <!-- </div>-->
+</form>
+</div>
+<script>
+    var checkName=function(){
+        document.getElementById("user").innerHTML="";
+        var name=eval(document.getElementById('username')).value;
+        if(name.length>10||name.length<1)
+        document.getElementById("user").innerHTML="用户名长度在1-10之间！";
+    }
+    var checkPassword=function(){
+        document.getElementById("pwd").innerHTML="";
+        var name=eval(document.getElementById('password')).value;
+        if(name.length>12||name.length<6)
+            document.getElementById("pwd").innerHTML="密码长度在6-12之间！";
+    }
+    var checkCfm=function(){
+        document.getElementById("cfm1").innerHTML="";
+        var cfm=eval(document.getElementById('cfm')).value;
+        var name=eval(document.getElementById('password')).value;
+        if(cfm!==name)
+        document.getElementById('cfm1').innerHTML="两次密码不一致！";
+    }
+    var checkEmail= function () {
+        document.getElementById("email1").innerHTML="";
+        var email=eval(document.getElementById('email')).value;
+        var reg = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
+        var result=reg.test(email);
+
+        /*var reg = /^(([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6}\;)*([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6}))$/;*/
+        if(!result)
+        document.getElementById('email1').innerHTML="邮箱格式不正确！";
+    }
+    var checkBirthday=function(){
+        document.getElementById("birthday1").innerHTML="";
+        var name=eval(document.getElementById('birthday')).value;
+        if(name.length>10||name.length<8)
+            document.getElementById("birthday1").innerHTML="格式错误，例：xxxx.xx.xx";
+    }
+</script>
+</body>
+</html>

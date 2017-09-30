@@ -1,0 +1,58 @@
+{layout name="layout" /}
+        
+        <div class="sixteen columns">
+        	<div class="contant-area">
+            	<div class="thirteen columns offset-left">
+             		<h1>相册</h1> 
+             		
+             	<div class="" style="margin: 20px 0 0 20px;">
+					<a href="{:url('job/create')}" style="text-decoration:none; margin:5px 10px 10px 0;"> <input type="button" class="btn  btn-info" value="创建相册"></a>
+        			<a href="{:url('photo/show')}" style="text-decoration:none; margin:5px 10px 10px 0;"> <input type="button" class="btn  btn-info" value="上传相片"></a>
+					<a href="{:url('job/index')}" style="float:right; margin:0px 10px 0 0;"><input type="button" class="btn btn-info" value="返回"></a>
+				</div>             		             		
+                    <div class="" style="">
+                    	<form action="{:url('job/update',['id'=>$job->id])}"  method="post">
+                    		<div style="float:left; margin:10px 10px 10px 0;">
+                    		相册名称：<input type="text" name="title" class="form-control" value="{$job->title}">
+                    		</div>
+                    		<br>
+                    		<div style="margin:100px 10px 10px 0;">
+                    		相册描述：<textarea id="article" name="article" rows="10" cols="100" ></textarea>
+                    		<script>document.getElementById("article").value="{$job->article}"</script> 
+                    		</div>
+                    		<br>
+                    		相册分类：<select style="margin:10px 10px 10px 0;" name="sort_name" class="form-control">
+                    		{volist name="sort" id="v"}
+                    		{if $v['name'] == $job['sort_name']}
+                    		<option value="{$v['name']}" selected>{$v['name']}</option>
+                    		{else}
+                    		<option value="{$v['name']}" >{$v['name']}</option>
+                    		{/if}
+                    		{/volist}
+                    		</select>                    		                    		
+                    		
+                    		<div>
+                    		<input type="submit" name="submit"  value="保存" class="btn btn-success btn-sm " tyle="text-align:center;">
+                    		
+                    		<input type="submit" name="submit" value="取消" class="btn btn-success btn-sm" style="text-align:center;margin:0 0 0 10px;">
+                    		</div>
+                    	</form>
+                    
+                    
+                    </div> 
+                   
+                      
+                      
+                </div>
+                
+                
+                
+                <div class="clear"></div>
+                <div class="blank"></div>
+             </div><!--contant-area-->
+        </div>
+    </div><!-- container -->
+    
+    
+    
+    

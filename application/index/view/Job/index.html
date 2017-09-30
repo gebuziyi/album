@@ -1,0 +1,43 @@
+{layout name="layout" /}
+        
+        <div class="sixteen columns">
+        	<div class="contant-area">
+            	<div class="thirteen columns offset-left">
+             		<h1>相册</h1> 
+             		
+             	<div class="" style="margin: 20px 0 0 20px;">
+					<a href="{:url('job/create')}" style="text-decoration:none; margin:5px 10px 10px 0;"> <input type="button" class="btn  btn-info" value="创建相册"></a>
+        			<a href="{:url('photo/show')}" style="text-decoration:none; margin:5px 10px 10px 0;"> <input type="button" class="btn  btn-info" value="上传相片"></a>
+					<a href="{:url('job/index')}" style="float:right; margin:0px 10px 0 0;"><input type="button" class="btn btn-info" value="返回"></a>
+				</div>             		             		
+                
+			    <div>
+			    {foreach name="data" id="v"}
+			    <a href="{:url('job/browse',['id'=>$v['id']])}">
+			   
+			    <div style="float:left; width:120px; height:150px; margin:20px 20px; border:1px solid gray" >
+			    
+			    
+			    <div>
+			    <img  src="__ROOT__/newpath/{$v['url']}">			   
+			    </div>
+			    
+			    			 
+			    <div><a href="{:url('job/delete',['id'=>$v['id']])}" class="btn btn-default btn-xs" style="margin:20px 20px 20px 0px;">删除</a>
+			    <a href="{:url('job/edit',['id'=>$v['id']])}" class="btn btn-default btn-xs" style="margin:20px;">修改</a></div>
+			    
+			    </div> 
+			    </a>
+			    {/foreach}
+                 </div>
+                    
+                </div>
+                <div class="clear"></div>
+                <div class="blank"></div>
+             </div><!--contant-area-->
+        </div>
+    </div><!-- container -->
+    
+    
+    
+    
